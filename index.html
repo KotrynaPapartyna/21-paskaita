@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21 paskaita</title>
+</head>
+<body>
+
+    <script>
+        "use strict"
+
+        // funkcijos- kodas atliekantis specifinius veiksmus ir gali buti panaudotas daug kartu
+
+        //apsirasem funkcija, bet neveikia. reikia iskvietimo 
+        function pirmaFunkcija () {
+            //cia rasomas kodas funkcijos aprasymui
+            console.log ("funkcija");  
+        }
+        function antraFunkcija () {
+            console.log ("funkcija1")
+        }
+
+        function treciaFunkcija () {
+            return 500;
+        }
+        var funkcijosRezultatas= treciaFunkcija ();
+        console.log (funkcijosRezultatas);
+
+        //sudeti su skaicius 
+
+        function suma (a,b) {
+            return a + b;
+        }
+        //kintamieji perduodami funkcojos iskvietimo metu 
+        isvedimas(suma (10,10)); 
+        isvedimas(suma (10,60)); 
+        isvedimas(suma (10,22)); 
+        isvedimas(suma (10,15)); 
+        isvedimas(suma (44,10)); 
+        isvedimas(suma (10,34)); 
+        isvedimas(suma (15,10)); 
+ 
+        function isvedimas (reiksme) {
+            console.log ("rezultatas yra: " + reiksme);
+        }
+
+       // var a=5;
+       // var b= 12; 
+        // var suma1= a+b;
+
+        //console.log (suma1); 
+
+
+        //funkcijos iskvietimas
+        pirmaFunkcija ();
+        antraFunkcija ();
+
+        /*
+        for (var i=0, i< 50; i++) {
+            pirmaFunkcija ();
+            antraFunkcija ();
+        }
+        */
+
+        //sukurti n+ elementu masyva, kuris butu uzpildytas atistiktinemis reiksmemis
+
+        function atsitiktinis (intervaloPradzia, intervaloPabaiga) {
+            return Math.floor(Math.random () * (intervaloPabaiga - intervaloPradzia + 1) ) + intervaloPradzia;
+        }
+
+        var n= suma (10,10); 
+        var masyvas= [];
+
+        var test= Math.random(); // atsitiktine reiksme rodo nuo 0 iki 1 (su skaiciais po kablelio)
+       
+        var test1=atsitiktinis (0, 99); // gausime skaicius nuo 0 iki 99- (sveikus skaicius)
+        var test2=atsitiktinis (77,99);  //gaunamas intervalas skaiciu nuo 77 iki 99 (sveiki skaicia)
+        
+        console.log (test1);
+        console.log (test2);
+
+
+        for (var i= 0; i < n; i++) {
+            var atsitiktinisSk = atsitiktinis (0, 10000000);
+            masyvas.push (atsitiktinisSk);
+        }
+        console.log ( masyvas);
+
+
+
+
+    </script>
+    
+</body>
+</html>
